@@ -1,8 +1,26 @@
-<div class="container" style="text-align: center;">
+<div class="container my-4" style="text-align: center; color: blue;">
     <h1>Child Components</h1>
-
 </div>
-
-<div style="text-align: center; color: green;" >
-    <h1>{{hero}}</h1>
+<div>
+    <button routerLink="/app" class="btn btn-primary mx-4 btn-lg" >Back</button>
+</div>
+<div class="table table-success my-4 " >
+    <table border="1" >
+        <tr>
+            <td>Id</td>
+            <td>PostId</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Body</td>
+            <td></td>
+        </tr>
+        <tr *ngFor="let item of data1" >
+            <td>{{item.id}}</td>
+            <td>{{item.postId}}</td> 
+            <td>{{item.name}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.body}}</td>
+            <button class="btn btn-success" style="background-color: green;" >Comments</button>
+        </tr>
+    </table>
 </div>

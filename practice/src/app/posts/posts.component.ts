@@ -7,7 +7,7 @@ import {UsersService} from '../users.service'
 })
 export class PostsComponent implements OnInit {
 
-  msg="msg from parent component"
+  
 
   data:any=[];
 

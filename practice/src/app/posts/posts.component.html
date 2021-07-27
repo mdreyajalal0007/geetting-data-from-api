@@ -1,12 +1,8 @@
-<div class="container" style="text-align: center; color:black;" >
+<div class="container my-4" style="text-align: center; color:red;" >
 <h1>Parent Component</h1>
 </div> 
 
-<div>
-    <app-comments [hero]="msg" ></app-comments>
-</div>
-
-<button routerLink="/comments" class="btn btn-primary btn-lg mx-4" >Back</button>
+<button routerLink="/app" class="btn btn-primary btn-lg mx-4" >Back</button>
 
 <div class="table table-success my-4" >
     <table border="1" >
@@ -15,7 +11,7 @@
             <td>UserId</td>
             <td>Title</td>
             <td>Body</td>
-            <td>Button</td>
+            <td></td>
         </tr>
         <tr *ngFor="let item of data" >
             <td>{{item.id}}</td>
