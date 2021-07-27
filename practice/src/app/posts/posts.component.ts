@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {UsersService} from '../users.service'
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -8,7 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class PostsComponent implements OnInit {
 
   msg="msg from parent component"
-  constructor() { }
+
+  data:any=[];
+
+  constructor( private user:UsersService) {
+    this.user.getdata().subscribe(data=>{
+      console.log(data)
+      this.data=data
+    })
+   }
+  
+   gett(){
+     this.user.getdata().subscribe(data=>{
+       console.log(data)
+     })
+   }
+  
 
   ngOnInit(): void {
   }

@@ -1,21 +1,26 @@
 <div>
-    <app-posts></app-posts>
+    <router-outlet></router-outlet>
 </div>
-<div class="container" >
+<div style="text-align: center;" class="my-5" >
+<button class="btn btn-success btn-lg" routerLink="/posts" >Posts</button>
+<button class="btn btn-warning btn-lg mx-5 " routerLink="/comments" >Comments</button>
+</div>
+<!--
+<div class="table table-success" >
 <table border="1" >
 
     <tr>
-        <td>Body</td>
         <td>Id</td>
-        <td>Title</td>
         <td>UserId</td>
+        <td>Title</td>
+        <td>Body</td>
     </tr> 
     <tr *ngFor="let item of data" >
-        <td>{{item.body}}</td>
         <td>{{item.id}}</td>
-        <td>{{item.title}}</td>
         <td>{{item.userId}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.body}}</td>
     </tr> 
 
 </table>
-</div>
+</div> -->

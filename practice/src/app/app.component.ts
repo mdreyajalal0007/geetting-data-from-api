@@ -7,7 +7,7 @@ import {UsersService} from './users.service'
 })
 export class AppComponent {
   title = 'practice';
-  data:any=[]
+  /* data:any=[]
   
   constructor( private user:UsersService ){
 
@@ -16,5 +16,5 @@ export class AppComponent {
       this.data=data
     })
   } 
-  
+  */
 }
