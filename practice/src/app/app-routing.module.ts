@@ -1,23 +1,25 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { from } from 'rxjs';
-import { PostsComponent } from './posts/posts.component';
+import {PostsComponent} from './posts/posts.component'
 import { CommentsComponent } from './comments/comments.component'
-import {AppComponent} from './app.component'
+import { HomeComponent } from './home/home.component';
+
 
 const routes: Routes = [
 
   {
-    path : 'posts',
+    path: 'posts',
     component : PostsComponent
   },
+ 
   {
-    path : 'comments',
+    path : 'comments/:id',
     component : CommentsComponent
   },
   {
-    path : 'app',
-    component : AppComponent
+    path : 'home',
+    component : HomeComponent
   }
   
 

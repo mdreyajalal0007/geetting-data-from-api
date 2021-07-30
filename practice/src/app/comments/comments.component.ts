@@ -1,5 +1,8 @@
 import { Component, OnInit, } from '@angular/core';
-import {Users1Service} from '../users1.service'
+import { ActivatedRoute } from '@angular/router';
+import { UsersService } from '../users.service';
+
+
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
@@ -7,17 +10,22 @@ import {Users1Service} from '../users1.service'
 })
 export class CommentsComponent implements OnInit {
 
-  data1:any=[];
+ id:any=[];
+ data:any=[];
+  constructor( private rout:ActivatedRoute, private users:UsersService  ) {
 
-  
-  constructor(private users1:Users1Service) {
-    this.users1.getD().subscribe(data=>{
-      console.log(data)
-      this.data1=data
-    })
   }
 
   ngOnInit(): void {
-  }
 
+    this.id=this.rout.snapshot.params.id;
+    this.getData();
+  }
+  getData(){
+  
+    this.users.getDataC(this.id).subscribe(data=>{
+      this.data=data;
+      console.log(this.data)
+    })
+  }
 }

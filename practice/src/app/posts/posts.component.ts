@@ -11,20 +11,13 @@ export class PostsComponent implements OnInit {
 
   data:any=[];
 
-  constructor( private user:UsersService) {
-    this.user.getdata().subscribe(data=>{
-      console.log(data)
+  constructor( private users:UsersService) {
+    this.users.getdata().subscribe(data=>{
       this.data=data
     })
+     
    }
   
-   gett(){
-     this.user.getdata().subscribe(data=>{
-       console.log(data)
-     })
-   }
-  
-
   ngOnInit(): void {
   }
 

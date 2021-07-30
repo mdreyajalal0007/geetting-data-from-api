@@ -1,26 +1,21 @@
-<div class="container my-4" style="text-align: center; color: blue;">
-    <h1>Child Components</h1>
-</div>
-<div>
-    <button routerLink="/app" class="btn btn-primary mx-4 btn-lg" >Back</button>
-</div>
-<div class="table table-success my-4 " >
-    <table border="1" >
-        <tr>
-            <td>Id</td>
-            <td>PostId</td>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Body</td>
-            <td></td>
-        </tr>
-        <tr *ngFor="let item of data1" >
-            <td>{{item.id}}</td>
-            <td>{{item.postId}}</td> 
-            <td>{{item.name}}</td>
-            <td>{{item.email}}</td>
-            <td>{{item.body}}</td>
-            <button class="btn btn-success" style="background-color: green;" >Comments</button>
-        </tr>
+<div style="background-color: lightblue
+;" >
+    <table border="1" class="table table-bordered border-primary my-5 ">
+        <thead>
+            <tr>
+                <td style="font-family: Impact, 'Bold'; font-size: 5mm; ">Id</td>
+                <td style="font-family: Impact, 'Bold';font-size: 5mm; ">Title</td>
+                <td style="font-family: Impact, 'Bold';font-size: 5mm; ">Body</td>
+
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <td>{{data.id}}</td>
+                <td>{{data.title}}</td>
+                <td>{{data.body}}</td>
+
+            </tr>
+        </thead>
     </table>
 </div>

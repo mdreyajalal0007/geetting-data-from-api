@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@ngx-loading-bar/router": "^5.1.2"
+  }
+}
