@@ -1,6 +1,17 @@
-<div style="background-color: lightblue
-;" >
-    <table border="1" class="table table-bordered border-primary my-5 ">
+<div *ngIf="loading else loaded " class="text-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    
+  </div>
+
+<ng-template #loaded >
+<button routerLink="/posts" class="btn btn-outline-primary mx-4 my-5" >Back To Posts</button>
+<div style="background-color: lightblue;" >
+
+    
+
+    <table border="1" class="table table-bordered border-primary ">
         <thead>
             <tr>
                 <td style="font-family: Impact, 'Bold'; font-size: 5mm; ">Id</td>
@@ -19,3 +30,4 @@
         </thead>
     </table>
 </div>
+</ng-template>

@@ -10,6 +10,8 @@ export class UsersService {
   
   constructor( private http:HttpClient ) { }
 
+ 
+
   getdata(){
 
     let url="https://jsonplaceholder.typicode.com/posts";
@@ -20,5 +22,4 @@ export class UsersService {
     return this.http.get('https://jsonplaceholder.typicode.com/posts/'+id)
   }
 
-  
 }

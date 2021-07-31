@@ -1,20 +1,25 @@
-<div class="container my-4" style="text-align: center; color:red;">
-    <h1>Parent Component</h1>
+<div *ngIf="loading else loaded " class="text-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    
+  </div>
+  <ng-template #loaded >
+<div  class="container my-4" style="text-align: center; font-family:Impact, 
+'Arial Narrow Bold'; color:rgba(245, 43, 7, 0.979); ">
+    <h1>9TAB DIGITECH PRIVATE LIMITED</h1>
 </div>
 
-<div class="mx-4">
-    <button class="btn btn-primary btn-lg" routerLink="/home">Back</button>
-</div>
 
-<div style="background-color: lightblue;" >
-<table border="1" class="table table-bordered border-primary my-4">
+<div style="background-color: lightblue;"   >
+<table border="1" class="table table-bordered border-primary my-4"  >
     <tr>
         <td style="font-family: Impact, 'Bold'; font-size:5mm; " >Id</td>
         <td style="font-family: Impact, 'Bold';font-size: 5mm; " >Title</td>
         <td style="font-family: Impact, 'Bold';font-size: 5mm; " >Body</td>
         <td style="font-family: Impact, 'Bold';font-size: 5mm; " >Action</td>
     </tr>
-    <tr *ngFor="let item of data">
+    <tr *ngFor="let item of data"  >
         <td>{{item.id}}</td>
         <td>{{item.title}}</td>
         <td>{{item.body}}</td>
@@ -23,3 +28,4 @@
     </tr>
 </table>
 </div>
+</ng-template>

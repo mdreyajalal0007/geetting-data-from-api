@@ -12,6 +12,8 @@ export class CommentsComponent implements OnInit {
 
  id:any=[];
  data:any=[];
+ commensts=Object
+ loading=true
   constructor( private rout:ActivatedRoute, private users:UsersService  ) {
 
   }
@@ -20,12 +22,14 @@ export class CommentsComponent implements OnInit {
 
     this.id=this.rout.snapshot.params.id;
     this.getData();
+    
   }
   getData(){
   
     this.users.getDataC(this.id).subscribe(data=>{
       this.data=data;
       console.log(this.data)
+      this.loading=false
     })
   }
 }
