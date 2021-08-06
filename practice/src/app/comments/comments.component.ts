@@ -23,7 +23,7 @@ export class CommentsComponent implements OnInit {
     this.id=this.rout.snapshot.params.id;
     this.getData();
     
-  }
+  } 
   getData(){
   
     this.users.getDataC(this.id).subscribe(data=>{

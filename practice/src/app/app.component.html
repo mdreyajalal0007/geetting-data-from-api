@@ -1,4 +1,8 @@
-
-
+<div *ngIf="loading else loaded " class="text-center my-5 ">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<ng-template #loaded >
 <router-outlet  ></router-outlet>
-
+</ng-template>

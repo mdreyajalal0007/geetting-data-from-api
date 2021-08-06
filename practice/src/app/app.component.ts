@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsersService } from './users.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'practice';
-  
+  loading=true
 
-  constructor() {}
+ 
+
+  constructor( private users:UsersService ) {
+    this.users.getdata().subscribe(data=>{
+      this.loading=false
+    })
+    this.users.getDataC(this).subscribe(data=>{
+      this.loading=false
+    })
+  }
+  
 }
  
