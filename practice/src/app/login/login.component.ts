@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import{Router} from '@angular/router'
+import { Router } from '@angular/router';
 import { UsersService } from '../users.service';
+
+
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers:[UsersService]
 })
 export class LoginComponent implements OnInit {
   form : FormGroup;
-  username:string=""
-  password:string=""
   
- constructor( private rout:Router, 
-    private formbuilder: FormBuilder
-    ) 
+  
+constructor(private rout:Router, private formbuilder:FormBuilder, private user:UsersService ) 
   { 
     this.form =  new FormGroup({
       username: new FormControl ('', [Validators.required]),
@@ -23,16 +24,19 @@ export class LoginComponent implements OnInit {
       
     });
   }
-  logInUser(){
-    if(this.username == "9tab" && this.password == "9tab"){
-      
-       this.rout.navigate(['/posts'])
-    }else{
-      alert('Access Denied')
-    }
-  }
+  
+ 
  
 ngOnInit(): void {
   } 
   
+  logInUser(username:string, password:string){
+   const output = this.user.getD(username , password);
+   if (output == true) {
+     this.rout.navigate(['/posts'])
+   }else{
+     alert('Acess Denied')
+   }
+  }
+
  }

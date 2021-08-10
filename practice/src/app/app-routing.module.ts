@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'posts',
-    //canActivate:(['/posts']),
+    canActivate:[AuthGuard],
     component: PostsComponent
   },
 
@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path:"**",
-    component : LoginComponent
+    redirectTo: ''
   }
 
 ];

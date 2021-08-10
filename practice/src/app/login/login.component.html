@@ -6,8 +6,8 @@
     <div class="form-group my-4">
       <label for="username">Username</label>
       <div style="color: red;">
-        <input class="form-control" type="usename" name="username" formControlName="username" [(ngModel)]="username"
-          placeholder="*9tab" />
+        <input class="form-control" type="usename" name="username" formControlName="username" #a
+          placeholder="*username" />
 
         <ul class="help-block">
           <li *ngIf="form.controls.username.errors?.required && form.controls.username.dirty">This field is required.
@@ -18,18 +18,17 @@
     <div class="form-group">
       <label for="password">Password</label>
       <div style="color: red;">
-        <input class="form-control" type="password" name="password" formControlName="password" [(ngModel)]="password"
-          placeholder="*9tab" />
+        <input class="form-control" type="password" name="password" formControlName="password" #b
+          placeholder="*password">
 
         <ul class="help-block">
           <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">This field is required.
           </li>
-        </ul> 
+        </ul>
       </div>
     </div>
 
-    <input [disabled]="!form.valid" (click)="logInUser()" class="btn btn-primary btn-lg my-4" type="submit"
-      value="Login" />
+    <input [disabled]="!form.valid" (click)="logInUser(a.value, b.value)" class="btn btn-primary btn-lg my-4"
+      type="submit" value="Login" />
   </form>
 </div>
-

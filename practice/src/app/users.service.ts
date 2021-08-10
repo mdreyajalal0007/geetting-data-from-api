@@ -1,26 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Router } from '@angular/router'
-import { LoginComponent } from './login/login.component'
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
   
-
-  constructor(private http: HttpClient, private rout: Router) {}
-
-
+  constructor(private http: HttpClient) {
   
-  /* getD(){
-    window.localStorage.setItem('key','reyaj')
-    window.localStorage.getItem('key')
-  }*/
+}
+
+getD(username:string, password:string){
+  if (username =="reyaj" && password =="reyaj") {
+    localStorage.setItem('username', "9tab");
+    return true;
+  }else{
+    return false
+  }
   
-
-
-
+}
 
 
   getdata() {

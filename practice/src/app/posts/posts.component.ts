@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {UsersService} from '../users.service'
-import {observable} from 'rxjs'
+
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
